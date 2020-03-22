@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>sberbanktask2</artifactId>
+    <groupId>org.example</groupId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>presentation</artifactId>
+  <packaging>war</packaging>
+
+  <properties>
+    <wildfly-hostname>localhost</wildfly-hostname>
+    <wildfly-port>9990</wildfly-port>
+    <wildfly-username>admin</wildfly-username>
+    <wildfly-password>admin</wildfly-password>
+    <wildfly-name>sberbanktask2.war</wildfly-name>
+
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.wildfly.plugins</groupId>
+        <artifactId>wildfly-maven-plugin</artifactId>
+        <version>2.0.2.Final</version>
+        <configuration>
+          <hostname>${wildfly-hostname}</hostname>
+          <port>${wildfly-port}</port>
+          <username>${wildfly-username}</username>
+          <password>${wildfly-password}</password>
+          <name>${wildfly-name}</name>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.example</groupId>
+      <artifactId>logic</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
+  </dependencies>
+
+</project>
