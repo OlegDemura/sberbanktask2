@@ -48,7 +48,8 @@ public class ModelService {
       return model.getLastName();
     }
 
-    return model.getLastName().replace(String.valueOf(list.get(0)), "");
+    return model.getLastName().replace(String.valueOf(list.get(0)).toUpperCase(), "")
+        .replace(String.valueOf(list.get(0)), "");
   }
 
 }
